@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -16,6 +17,7 @@ public class Team {
     private String name;
 
     @ManyToOne //viele teams zu einer liga 
+    @JoinColumn(name = "league_id") //  Fremdschlüssel
     private League league;  // Liga direkt verknüpft
 
     // Getter und Setter
